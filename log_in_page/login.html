@@ -3,23 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SafeBank Login</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>SafeBank - Login</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="top-banner">
-        <span><i class="fas fa-shield-alt"></i> Secure Banking Platform</span>
-        <span><i class="fas fa-phone"></i> 24/7 Support: 1-800-SAFEBANK</span>
+        <span><i class="fas fa-lock"></i> Secure Online Banking</span>
+        <span><i class="fas fa-mobile-alt"></i> 24/7 Support: 1-800-SAFEBANK</span>
     </div>
-    
-    <!-- <header>
-        <div class="logo">
-            <i class="fas fa-university"></i>
-            <h1>SafeBank</h1>
-        </div>
-    </header> -->
 
     <nav>
         <div class="logo">
@@ -29,75 +22,99 @@
         <div class="nav-links">
             <a href="#" class="active"><i class="fas fa-home"></i> Home</a>
             <a href="#"><i class="fas fa-info-circle"></i> About</a>
+            <a href="#"><i class="fas fa-briefcase"></i> Services</a>
             <a href="#"><i class="fas fa-envelope"></i> Contact</a>
-            <a href="#"><i class="fas fa-handshake"></i> Services</a>
         </div>
     </nav>
 
-    <div class="container">
-        <div class="login-box">
+    <div class="login-wrapper">
+        <div class="login-container">
             <div class="login-header">
-                <i class="fas fa-lock"></i>
-                <h2>Secure Login</h2>
+                <div class="logo">
+                    <i class="fas fa-university"></i>
+                    <h1>SafeBank</h1>
+                </div>
+                <p>Secure Access to Your Financial World</p>
             </div>
-            <form action="#" method="POST">
+
+            <form id="login-form" class="login-form">
                 <div class="form-group">
-                    <label for="userid"><i class="fas fa-user"></i> User ID</label>
-                    <div class="input-group">
-                        <input type="text" id="userid" name="userid" placeholder="Enter your user ID" required>
-                        <div class="tooltip">
-                            <span>Use your registered email or username</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="password"><i class="fas fa-key"></i> Password</label>
-                    <div class="input-group">
-                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                        <div class="tooltip">
-                            <span>Must be 8+ characters</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-options">
-                    <label class="checkbox-container">
-                        <input type="checkbox" name="remember">
-                        <span class="checkmark"></span>
-                        Remember me
+                    <label for="username">
+                        <i class="fas fa-user"></i> Username or Email
                     </label>
-                    <a href="#" class="forgot-link">Forgot Password?</a>
+                    <div class="input-wrapper">
+                        <input 
+                            type="text" 
+                            id="username" 
+                            name="username" 
+                            placeholder="Enter your username" 
+                            required 
+                            autocomplete="username"
+                        >
+                        <span class="input-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </span>
+                    </div>
                 </div>
-                <button type="submit" class="btn"><i class="fas fa-sign-in-alt"></i> Login</button>
-                <div class="register-link">
-                    New to SafeBank? <a href="#">Create Account</a>
+
+                <div class="form-group">
+                    <label for="password">
+                        <i class="fas fa-lock"></i> Password
+                    </label>
+                    <div class="input-wrapper password-wrapper">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="Enter your password" 
+                            required 
+                            autocomplete="current-password"
+                        >
+                        <span class="input-icon password-toggle">
+                            <i class="fas fa-eye-slash"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+
+                <div class="form-group captcha-section">
+                    <div class="captcha-container">
+                        <div id="captcha-math" class="captcha-math">🔒 Solve</div>
+                        <input type="text" id="captcha-input" name="captcha" placeholder="Your answer" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="login-button" id="login-btn" disabled>
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+
+                <div class="signup-link">
+                    New to SafeBank? 
+                    <a href="../signup_page/signup.html">Create Account</a>
                 </div>
             </form>
+
+            <div class="login-footer">
+                <div class="security-info">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>256-bit Encryption</span>
+                </div>
+                <div class="support-info">
+                    <i class="fas fa-headset"></i>
+                    <span>24/7 Support</span>
+                </div>
+            </div>
         </div>
     </div>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3><i class="fas fa-shield-alt"></i> Security</h3>
-                <p>Bank-grade encryption and security measures to protect your data</p>
-            </div>
-            <div class="footer-section">
-                <h3><i class="fas fa-clock"></i> 24/7 Access</h3>
-                <p>Access your account anytime, anywhere with our secure platform</p>
-            </div>
-            <div class="footer-section">
-                <h3><i class="fas fa-headset"></i> Support</h3>
-                <p>Dedicated support team available round the clock</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 SafeBank Corp. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </div>
-    </footer>
+    <script src="login.js"></script>
+    <script src="captcha.js"></script>
 </body>
 </html>
